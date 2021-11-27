@@ -657,6 +657,18 @@
 	<</if>>
 <</widget>>
 
+<<widget "gymicon">>
+	<<if $images is 1>>
+		<img id="icon" scr="img/misc/icon/gym.png">
+	<</if>>
+<</widget>>
+
+<<widget "articon">>
+	<<if $images is 1>>
+		<img id="icon" scr="img/misc/icon/paint.png">
+	<</if>>
+<</widget>>
+
 <<widget "englishicon">>
 	<<if $images is 1>>
 		<img id="icon" src="img/misc/icon/english.png">
@@ -786,6 +798,12 @@
 <<widget "museumicon">>
 	<<if $images is 1>>
 		<img id="icon" src="img/misc/icon/museum.png">
+	<</if>>
+<</widget>>
+
+<<widget "cardicon">>
+	<<if images is 1>>
+		<img id="icon" src="img/misc/icon/card.png">
 	<</if>>
 <</widget>>
 

@@ -1,7 +1,7 @@
 :: Widgets Tips [widget]
 
 <<widget "tips">>
-<<set _maxTipCount = 140>>
+<<set _maxTipCount = 142>>
 <<if $args[0] is undefined>>
 	<<tipsList `random(0,_maxTipCount)`>>
 	<<unset _maxTipCount>>
@@ -293,6 +293,10 @@
 	The book store in the school library offers school appropriate clothing at a hefty markup.
 <<case 140>>
 	There are rumours of people in the forest and moor who are as much plant as they are person. Supposedly, their nectar is a potent aphrodisiac.
+<<case 141>>
+	Theres a gym at the local school. It opens in the afternoon for an hour. They also sell special Energy Drinks...
+<<case 142>>
+	Doren can be found in the Art Room in the morning before school starts.
 <</switch>>
 <</widget>>
 

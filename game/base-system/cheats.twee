@@ -770,6 +770,15 @@ Tending: <span id="statstending"><<print Math.trunc($tending)>></span>
  | <<link ">>>">><<set $tending += 1000>><<clamp>><<replace "#statstending">><<print Math.trunc($tending)>><</replace>> <<updatesidebarimg>><</link>>
 <br>
 
+<<link "<<<">><<set $arts -= 1000>><<clamp>><<replace "#statsarts">><<print Math.trunc($arts)>><</replace>> <<updatesidebarimg>><</link>> |
+<<link "<<">><<set $arts -= 100>><<clamp>><<replace "#statsarts">><<print Math.trunc($arts)>><</replace>> <<updatesidebarimg>><</link>> |
+<<link "<">><<set $arts -= 10>><<clamp>><<replace "#statsarts">><<print Math.trunc($arts)>><</replace>> <<updatesidebarimg>><</link>> |
+Arts: <span id="statsarts"><<print Math.trunc($arts)>></span>
+ | <<link ">">><<set $arts += 10>><<clamp>><<replace "#statsarts">><<print Math.trunc($arts)>><</replace>> <<updatesidebarimg>><</link>>
+ | <<link ">>">><<set $arts += 100>><<clamp>><<replace "#statsarts">><<print Math.trunc($arts)>><</replace>> <<updatesidebarimg>><</link>>
+ | <<link ">>>">><<set $arts += 1000>><<clamp>><<replace "#statsarts">><<print Math.trunc($arts)>><</replace>> <<updatesidebarimg>><</link>>
+<br>
+
 <br><br>
 
 <u>Sex skills</u>

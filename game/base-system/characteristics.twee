@@ -413,6 +413,7 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 			<<set _swimmingConfig = 	{ name : "Swimming", 	displayType : "grade",	currentValue : $swimmingskill,	modifier: 100,		states : _detailedSkillGrades}>>
 			<<set _athleticsConfig = 	{ name : "Athletics", 	displayType : "grade",	currentValue : $athletics, 		modifier: 100, 		states : _detailedSkillGrades}>>
 			<<set _tendingConfig = 		{ name : "Tending", 	displayType : "grade",	currentValue : $tending, 		modifier: 100, 		states : _detailedSkillGrades}>>
+			<<set _artsConfig = 		{ name : "Arts", 	displayType : "grade",	currentValue : $arts, 		modifier: 100, 		states : _detailedSkillGrades}>>
 
 			<<if $moorLuck gt 0>>
 				<<set _skulduggeryConfig.modifier to Math.floor(_skulduggeryConfig.modifier * (1 + ($moorLuck / 100)))>>
@@ -481,6 +482,7 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 		<<characteristic-box _swimmingConfig>>
 		<<characteristic-box _athleticsConfig>>
 		<<characteristic-box _tendingConfig>>
+		<<characteristic-box _artsConfig>>
 	</div>
 	<div class="characteristic-box-extras">
 		<<if $blackmoney gte 1>>

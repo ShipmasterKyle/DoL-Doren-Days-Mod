@@ -1,0 +1,79 @@
+:: Arts Classroom
+<<if $hour is 8>>
+    <<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+    <<npc Doren>> <<person1>> 
+    <<set $artTargets to ["Doren", "Robin", "Kylar", "Whitney"]>>   
+    <<set $irng to random(1,4)>>
+    <<if $irng is 1>>
+        <<set $dorenBook to "Romantic Novel">>
+    <<elseif $irng is 2>>
+        <<set $dorenBook to "History Book">>
+    <<elseif $irng is 3>>
+        <<set $dorenBook to "Novel">>
+    <<elseif $dorenBook is 4>>
+        <<set $dorenBook to "Art Book">>
+    <</if>>
+You stand in the artroom. A few artsy students are busy drawing. There are many activity to try until school starts. Doren is reading a book at <<his>> desk. <<initnpc "Doren">>
+<br>
+<<link [[Paint (0:15)|Arts Paint]]>><<pass 15>><</link>><<garts>>
+<br>
+<<link [[Talk to Doren|Doren Talk Arts]]>><</link>>
+<br><br>
+<<link [[Leave|Hallways]]>><<pass 1>><</link>>
+<<else>>
+The bell ring. Doren herds everyone outside. "I'll see you in class later." <<he>> waves just as <<he>> returns to the room to clean up.
+<</if>>
+<br><br>
+<<link [[Next|Hallways]]>><<pass 1>><</link>>
+
+:: Arts Paint
+<<set $rng to random(1,5)>>
+<<if $rng is 1>>
+    You spend some time drawing a picture of a fruit bowl.
+<<elseif $rng is 2>>
+    <<set $irng to random(1,4)>>
+    <<set $artTarget to $artTargets[$irng]>>
+    You spend some time painting <<print $artTarget>>.
+<<elseif $rng is 3>>
+    You spend time drawing yourself.
+<<elseif $rng is 4>>
+    <<set $irng to random(1,4)>>
+    <<set $artTarget to $artTargets[$irng]>>
+    You spend time making a model of <<print $artTarget>>.
+<<elseif $rng is 5>>
+    <<set $irng to random(1,4)>>
+    <<set $artTarget to $artTargets[$irng]>>
+    You spend time sketching <<print $artTarget>>
+<</if>>
+<br>
+<<if $arts gte 1000>>
+    You think its <span class="gold">perfect.</span>
+<<elseif $arts gte 800>>
+    You think its <span class="green">almost perfect. </span>
+<<elseif $arts gte 600>>
+    You think its <span class="teal">ok.</span>
+<<elseif $arts gte 400>>
+    You think it <span class="orange">needs some work. </span>
+<<elseif $arts gte 200>>
+    You think its <span class="pink">bad.</span>
+<<elseif $arts gte 0>>
+    You think its <span class="red">horrible.</span>
+<</if>>
+<br>
+<<artsskilluse>>
+<br><br>
+<<link [[Next|Arts Classroom]]>><</link>>
+
+
+:: Doren Talk Arts
+You talk to Doren for a few minutes.
+<<set $rng to random(1,3)>>
+<<if $rng is 1>>
+    You tell <<him>> a joke. It makes him laugh.
+<<elseif $rng is 2>>
+    <<He>> tells you about the book <<hes>> reading. Its a <<print $dorenBook>>.
+<<elseif $rng is 3>>
+    <<He>> tells you a story. Its interesting.
+<</if>>
+<br>
+<<link [[Next|Arts Classroom]]>><</link>><<pass 10>>

@@ -2042,6 +2042,18 @@ in dev alternative to current "breasts" widget
 <span class="green">+ + + Tending</span>
 <</widget>>
 
+<<widget "garts">> |
+<span class="green">+ Arts</span>
+<</widget>>
+
+<<widget "ggarts">> |
+<span class="green">+ + Arts</span>
+<</widget>>
+
+<<widget "gggarts">> |
+<span class="green">+ + + Arts</span>
+<</widget>>
+
 <<widget "gdanceskill">> |
 <span class="green">+ Dance skill</span>
 <</widget>>

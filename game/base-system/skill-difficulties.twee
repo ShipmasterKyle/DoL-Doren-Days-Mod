@@ -816,6 +816,54 @@ and $worn.upper.type.includesAny("swim", "naked")and $worn.lower.type.includesAn
 <</if>>
 <</widget>>
 
+<<widget "artsDifficulty">>
+<<if $args[0]>>
+	<<set _artsdifficultymin to $args[0]>>
+<<else>>
+	<<set _artsdifficultymin to 1>>
+<</if>>
+<<if $args[1]>>
+	<<set _artsdifficultymax to $args[1]>>
+<<else>>
+	<<set _artsdifficultymax to 1000>>
+<</if>>
+<<set _arts to clone($arts)>>
+<<if $moorLuck gt 0>>
+	<<set _arts to Math.floor(_arts * (1 + ($moorLuck / 100)))>>
+<</if>>
+<<if $args[2] is undefined>>
+	<<if $checkstyle is "skillname">>
+		| <span class="orange">Arts</span>
+	<<else>>
+		| <span class="orange">Arts</span>:
+		<<set _difficulty to Math.round(Math.clamp(_arts - _artsdifficultymin, 0, _artsdifficultymax) / (_artsdifficultymax - _artsdifficultymin) * 100)>>
+		<<if _difficulty gt 100>>
+			<<set _difficulty to 100>>
+		<</if>>
+		<<if _difficulty gte 100>>
+			<span class="green">Simple <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<<elseif _difficulty gte 80>>
+			<span class="teal">Easy <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<<elseif _difficulty gte 60>>
+			<span class="lblue">Reasonable <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<<elseif _difficulty gte 40>>
+			<span class="blue">Challenging <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<<elseif _difficulty gte 20>>
+			<span class="purple">Hard <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<<elseif _difficulty gte 1>>
+			<span class="pink">Very Hard <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<<else>>
+			<span class="red">Impossible <<if $checkstyle is "percentage">><<print _difficulty>>%<</if>></span>
+		<</if>>
+	<</if>>
+<</if>>
+<<if _arts gte random(_artsdifficultymin, _artsdifficultymax)>>
+	<<set $artSuccess to 1>>
+<<else>>
+	<<set $artSuccess to 0>>
+<</if>>
+<</widget>>
+
 <<widget "difficulty">>
 <<if $args[0]>>
  | Success Chance:

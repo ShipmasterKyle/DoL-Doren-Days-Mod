@@ -314,6 +314,9 @@
 		<<tiredness $pass pass>>
 		<<set $drunk -= $pass>>
 	<</if>>
+	<<if $strongup gt 0>>
+		<<set $strongup -= $pass>>
+	<</if>>
 	<<if $drugged gt 0>>
 		<<set $drugged -= $pass>>
 	<</if>>
@@ -777,6 +780,17 @@
 <</if>>
 <</widget>>
 
+<<widget "artsskilluse">>
+<<if $statFreeze isnot true>>
+	<<arts 1>>
+	<<if $arts lt 1000>>
+		<span class="gold"> You feel more confident in your art abilities.</span>
+	<<else>>
+		<span class="blue"> You already know all there is to know about art. </span>
+	<</if>>
+<</if>>
+<</widget>>
+
 <<widget "scienceskill">>
 <<if $statFreeze isnot true>>
 	<<switch $sciencetrait>>
@@ -963,6 +977,13 @@
 <<if $args[0] and $statFreeze isnot true>>
 	<<set $tending += ($args[0] * 2)>>
 	<<set $tending to Math.clamp($tending, 0, 1000)>>
+<</if>>
+<</widget>>
+
+<<widget "arts">>
+<<if $args[0] and $statFreeze isnot true>>
+	<<set $arts += ($args[0] * 2)>>
+	<<set $arts to Math.clamp($arts, 0, 1000)>>
 <</if>>
 <</widget>>
 
@@ -1488,6 +1509,49 @@
 			<<elseif $drunk gte 100>>
 			<<print '<div class="lbluebar" style="width:' + $percent + '%"></div>'>>
 			<<elseif $drunk gte 1>>
+			<<print '<div class="tealbar" style="width:' + $percent + '%"></div>'>>
+			<<else>>
+			<<print '<div class="greenbar" style="width:' + $percent + '%"></div>'>>
+			<</if>>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+<</if>>
+<</widget>>
+
+<<widget "strong">>
+<<if $strongup gt 0>>
+	<div id="strengthupcaption">
+		<div @class="($showCaptionText is true ? '' : 'rightMeterText')">
+			<<if $showCaptionText is true>>
+				<<if $strongup lte 120>>
+				<span class="blue">You are woozy.</span>
+				<<elseif $strongup lte 240>>
+				<span class="purple">You are tipsy.</span>
+				<<elseif $strongup lte 360>>
+				<span class="purple">You are drunk.</span>
+				<<elseif $strongup lte 480>>
+				<span class="pink">You are smashed</span>
+				<<else>>
+				<span class="pink">You are wasted</span>
+				<</if>>
+			<<else>>
+				Drunk:
+			<</if>>
+		</div>
+		<div @class="($showCaptionText is true ? 'meter' : 'rightMeter')">
+			<<set $percent=Math.floor(($strongup/1000)*100)>>
+			<<if $strongup gte 500>>
+			<<print '<div class="redbar" style="width:' + $percent + '%"></div>'>>
+			<<elseif $strongup gte 400>>
+			<<print '<div class="pinkbar" style="width:' + $percent + '%"></div>'>>
+			<<elseif $strongup gte 300>>
+			<<print '<div class="purplebar" style="width:' + $percent + '%"></div>'>>
+			<<elseif $strongup gte 200>>
+			<<print '<div class="bluebar" style="width:' + $percent + '%"></div>'>>
+			<<elseif $strongup gte 100>>
+			<<print '<div class="lbluebar" style="width:' + $percent + '%"></div>'>>
+			<<elseif $strongup gte 1>>
 			<<print '<div class="tealbar" style="width:' + $percent + '%"></div>'>>
 			<<else>>
 			<<print '<div class="greenbar" style="width:' + $percent + '%"></div>'>>
@@ -3940,6 +4004,10 @@ __Map__<br>
 	<<set $NPCName[_i].lust = Math.clamp($NPCName[_i].lust, 0, 100)>>
 	<<set $NPCName[_i].dom = Math.clamp($NPCName[_i].dom, 0, 20)>>
 	<<set _i to $NPCNameList.indexOf("Eden")>>
+	<<set $NPCName[_i].love = Math.clamp($NPCName[_i].love, 0, 200)>>
+	<<set $NPCName[_i].lust = Math.clamp($NPCName[_i].lust, 0, 100)>>
+	<<set $NPCName[_i].dom = Math.clamp($NPCName[_i].dom, 0, 150)>>
+	<<set _i to $NPCNameList.indexOf("Doren")>>
 	<<set $NPCName[_i].love = Math.clamp($NPCName[_i].love, 0, 200)>>
 	<<set $NPCName[_i].lust = Math.clamp($NPCName[_i].lust, 0, 100)>>
 	<<set $NPCName[_i].dom = Math.clamp($NPCName[_i].dom, 0, 150)>>

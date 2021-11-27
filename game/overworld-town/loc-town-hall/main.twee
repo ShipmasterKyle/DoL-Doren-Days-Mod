@@ -1,0 +1,36 @@
+<!--£-->
+:: Town Hall
+<<set $outside to 0>><<set $location to "town-hall">><<effects>>
+
+You stand in a large room with several desks.
+<<if $daystate is "day">>
+	Tons of people busily walk up and down the halls,
+<<elseif $daystate is "dawn">>
+	A few people sit doing paperwork while drinking coffee.
+<<elseif $daystate is "dusk">>
+	A few people sit doing paperwork while watching the news.
+<<elseif $daystate is "night">>
+	Only a handful of people remain.
+<</if>>
+You walk up to the main desk and are greeted by the receptionist. 
+They smile and say "Welcome to the town hall, what can I do for you today?"
+<br><br>
+<<if $id is 0 and $money gte 200 >>
+    <<link [[Apply for an ID for £200 (1:00))|ID]]>><</link>>
+<<elseif $id is 1>>
+    <<link [[Apply for a real ID for £200 (1:00)|ID]]>><</link>>
+<</if>>
+<br>
+<<link [[Leave|Oxford Street]]>><</link>>
+
+
+:: ID
+<<generate1>><<person1>> <!--Fix -->
+You inform the receptionist that you wish to acquire an ID. <<He>> directs you down a small hallway to a room with a man/woman and a large camera. The receptionist leaves as the man/woman greets you.
+“Hello, are you here for a driver's license or ID?”
+You tell <<him>> you’re here for an ID and are given a stack of papers. 
+“Okay just fill these out and we can get your picture taken and ID printed.”
+You sit down and start to fill out the papers, listing your legal information before turning in the document. <<He>> reads over the papers swiftly, before ordering you to stand in front of the camera. It takes a moment before the camera clicks and your picture is taken. A machine on the other side of the room whirs to life and spits out a small card that <<he>> hands to you.
+“That will be all, have a nice day.” <<He>> says politely as you leave the room. 
+<br>
+<<link [[Next|Oxford Street]]>><<pass 1>><<set $id to 2>><</link>>

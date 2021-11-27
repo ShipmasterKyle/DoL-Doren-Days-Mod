@@ -1,0 +1,81 @@
+:: Gym
+<<npc Mason>><<person1>>
+You enter the gym. Students are busy working out with various machines. Mason walks around helping various student.
+<br><br>
+Gym Options
+<br>
+<<link [[Look at the machines|Workout]]>><</link>>
+<br>
+/* <<link [[Talk to Mason|Talk Mason Gym]]>><</link>>
+<br> */
+<<link [[Energy Drink Stand|Energy Drinks]]>><</link>>
+<br>
+<<link [[Leave|Hallways]]>><<pass 1>><</link>>
+
+:: Workout 
+You walk over to the machines.
+<<if $strongup is 0>>
+<br>
+<<link [[Treadmill(0:30)|Run Workout]]>><<pass 30>><<athletics 3>><</link>> <<gathletics>>
+<br>
+<<link [[Lift Weights(0:30)|Lift Workout]]>><<pass 30>><<athletics 3>><</link>> <<gathletics>>
+<br>
+<<elseif $strongup gte 200>>
+<br>
+<<link [[Treadmill(0:30)|Run Workout]]>><<pass 30>><<athletics 5>><</link>> <<gathletics>>
+<br>
+<<link [[Lift Weights(0:30)|Lift Workout]]>><<pass 30>><<athletics 5>><</link>> <<gathletics>>
+<br>
+<<elseif $strongup gte 400>>
+<br>
+<<link [[Treadmill(0:30)|Run Workout]]>><<pass 30>><<athletics 7>><</link>> <<ggathletics>>
+<br>
+<<link [[Lift Weights(0:30)|Lift Workout]]>><<pass 30>><<athletics 7>><</link>> <<ggathletics>>
+<br>
+<<elseif $strongup gte 600>>
+<br>
+<<link [[Treadmill(0:30)|Run Workout]]>><<pass 30>><<athletics 10>><</link>> <<ggathletics>>
+<br>
+<<link [[Lift Weights(0:30)|Lift Workout]]>><<pass 30>><<athletics 10>><</link>> <<ggathletics>>
+<br>
+<<elseif $strongup gte 800>>
+<br>
+<<link [[Treadmill(0:30)|Run Workout]]>><<pass 30>><<athletics 13>><</link>> <<ggathletics>>
+<br>
+<<link [[Lift Weights(0:30)|Lift Workout]]>><<pass 30>><<athletics 13>><</link>> <<ggathletics>>
+<br>
+<<elseif $strongup is 1000>>
+<br>
+<<link [[Treadmill(0:30)|Run Workout]]>><<pass 30>><<athletics 20>><</link>> <<gggathletics>>
+<br>
+<<link [[Lift Weights(0:30)|Lift Workout]]>><<pass 30>><<athletics 20>><</link>> <<gggathletics>>
+<br>
+<</if>>
+<<link [[Go back|Gym]]>><</link>>
+
+:: Energy Drinks
+<<if $gymdrink is "cheap">>
+<<set $gymdrink to 0>>
+    You buy and drink a cheap bottle. You feel a little energized now although you can taste the small amount of Alcohol.
+<<elseif $gymdrink is "quality">>
+<<set $gymdrink to 0>>
+    You buy and drink a nice bottle. You feel quite energized now although you can taste the small amount of Alcohol.
+<<elseif $gymdrink is "noal">>
+<<set $gymdrink to 0>>
+ You buy and drink a nice, alcohol free bottle. You feel pretty energized now although the effect is lessened by the lack Alcohol.
+<</if>>
+<<generate1>> <<person2>>
+You walk up to the stand. They sell many drinks of varying effects.
+<<if $money gte 300>>
+<<link [[Cheap Drink (£3 0:05)|Cheap Drink]]>><<endevent>><<set $money -= 300>><<set $gymdrink to "cheap">><<set $drunk to 25>><<set $strongup += 10>><<pass 5>><</link>> | <span class="red">+ Alcohol</span> | <span class="green">+ Strength </span>
+<br>
+<</if>>
+<<if $money gte 1200>>
+<<link [[Quality Drink (£12 0:05)|Cheap Drink]]>><<endevent>><<set $money -= 1200>><<set $gymdrink to "quality">><<set $drunk to 25>><<set $strongup += 20>><<pass 5>><</link>> | <span class="red">+ Alcohol</span> | <span class="green">+ + Strength </span>
+<br>
+<</if>>
+<<if $money gte 2500>>
+<<link [[Drink No Alcohol Drink (£25 0:05)|Cheap Drink]]>><<endevent>><<set $money -= 2500>><<set $gymdrink to "noal">><<set $strongup += 15>><<pass 5>><</link>> | <span class="green">+ + + Strength </span>
+<br>
+<</if>>
+<<link [[Leave|Gym]]>><</link>>

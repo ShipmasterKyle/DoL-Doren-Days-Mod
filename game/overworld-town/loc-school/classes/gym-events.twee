@@ -1,0 +1,4 @@
+:: Run Workout
+You get on a threadmill. You get a good workout.
+<<physique 3>><<tiredness 6>><<stress -6>>
+<<link [[Next|Workout]]>><</link>>

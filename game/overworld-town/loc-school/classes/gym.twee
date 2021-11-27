@@ -67,15 +67,16 @@ You walk over to the machines.
 <<generate1>> <<person2>>
 You walk up to the stand. They sell many drinks of varying effects.
 <<if $money gte 300>>
+<br>
 <<link [[Cheap Drink (£3 0:05)|Energy Drinks]]>><<endevent>><<set $money -= 300>><<set $gymdrink to "cheap">><<set $drunk to 25>><<set $strongup += 10>><<pass 5>><</link>> | <span class="red">+ Alcohol</span> | <span class="green">+ Strength </span>
 <br>
 <</if>>
 <<if $money gte 1200>>
-<<link [[Quality Drink (£12 0:05)|Energy Drinks]]>><<endevent>><<set $money -= 1200>><<set $gymdrink to "quality">><<set $drunk to 25>><<set $strongup += 20>><<pass 5>><</link>> | <span class="red">+ Alcohol</span> | <span class="green">+ + Strength </span>
+<<link [[Quality Drink (£12 0:05)|Energy Drinks]]>><<endevent>><<set $money -= 1200>><<set $gymdrink to "quality">><<set $drunk to 25>><<set $strongup += 20>><<pass 5>><</link>> | <span class="red">+ Alcohol</span> | <span class="green">+ + + Strength </span>
 <br>
 <</if>>
 <<if $money gte 2500>>
-<<link [[Drink No Alcohol Drink (£25 0:05)|Energy Drinks]]>><<endevent>><<set $money -= 2500>><<set $gymdrink to "noal">><<set $strongup += 15>><<pass 5>><</link>> | <span class="green">+ + + Strength </span>
+<<link [[Drink No Alcohol Drink (£25 0:05)|Energy Drinks]]>><<endevent>><<set $money -= 2500>><<set $gymdrink to "noal">><<set $strongup += 15>><<pass 5>><</link>> | <span class="green">+ + Strength </span>
 <br>
 <</if>>
 <<link [[Leave|Gym]]>><</link>>

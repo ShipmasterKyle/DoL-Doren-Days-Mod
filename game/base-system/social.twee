@@ -56,11 +56,17 @@
 				},
 				"Sam" : {
 					love : { maxValue : 50 }
-				}
+				},
+				"Doren" : {
+					important : true,
+					love : { maxValue : 200 },
+					lust : { maxValue : 100 },
+					dom : { maxValue : 150 }
+				},
 			};
 
 			/*This list is backwards due to the method used to sort via index, with unimportant NPCs being assigned -1*/
-			T.importantNpcOrder = [ "Alex", "Great Hawk", "Avery", "Sydney", "Kylar", "Eden", "Whitney", "Robin"];
+			T.importantNpcOrder = [ "Alex", "Great Hawk", "Avery", "Doren", "Sydney", "Kylar", "Eden", "Whitney", "Robin"];
 
 			/*Clones the NPC list, and orderes it by important first, then by alphabetical order*/
 			T.orderedNPCs = V.NPCName.slice().sort(function(a, b) {

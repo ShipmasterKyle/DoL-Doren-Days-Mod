@@ -13,7 +13,7 @@ You are in the school library.
 		The room is packed with students using their lunch break to catch up with homework.
 		<br>
 	<<else>>
-		Several students are present, working at the desks and searching among the bookshelves.
+		Several students are present, working at the desks and searching among the bookshelves. Doren is in a corner reading a book. <<initnpc "Doren">>
 		<br>
 	<</if>>
 <<elseif $schoolday isnot 1>>
@@ -171,6 +171,9 @@ Next to it is a small basket with returned and not yet sorted books.
 
 			<<link [[Approach|Maths Library Student]]>><</link>>
 			<br><br>
+		<</if>>
+		<<if $exposed lte 0 and $schoolday is 2 and $schoolstate is "afternoon" and $NPCName[$NPCNameList.indexOf("Doren")].state is "active" and ($weather is "rain" or $weather is "snow")>>
+			<<link [[Talk with Doren(0:05)|Doren Talk Library]]>><</link>><<pass 5>>
 		<</if>>
 		<<if $exposed lte 0 and $NPCName[$NPCNameList.indexOf("Kylar")].state is "active" and ($weather is "rain" or $weather is "snow") and $schoolstate is "lunch" and $luncheaten is 1>>
 			Kylar sits at a desk, scribbling something.

@@ -996,6 +996,13 @@
 			series: "",
 			filter: ["All", "Social"],
 		},
+		"Doren the Teacher":{
+			title: "Doren the Teacher",
+			desc: "Jessica did you sleep with Mr.Wilson? (You gave your virginity to Doren.)",
+			difficulty: 2,
+			series: "",
+			filter: ["All", "Social"],
+		},
 		"Avery the Moneybags":{
 			title: "Avery the Moneybags",
 			desc: "You gave your virginity to them.",

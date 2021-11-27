@@ -10,6 +10,7 @@
 				<<case "Robin">><<earnFeat "Robin the Lover">>
 				<<case "Kylar">><<earnFeat "Kylar the Obsessed">>
 				<<case "Eden">><<earnFeat "Eden the Lonely">>
+				<<case "Doren">><<earnFeat "Doren the Teacher">>
 				<<case "Whitney">><<earnFeat "Whitney the Tsundere">>
 				<<case "Avery">><<earnFeat "Avery the Moneybags">>
 				<<case "Leighton">><<earnFeat "Leighton the Shady">>
@@ -85,6 +86,10 @@
 		<</if>>
 	<<case "Sydney">>
 		<<if $sydneyromance is 1>>
+			<<set _loveInterest to true>>
+		<</if>>
+	<<case "Doren">>
+		<<if $dorenromance is 1>>
 			<<set _loveInterest to true>>
 		<</if>>
 	<<case "Eden">>

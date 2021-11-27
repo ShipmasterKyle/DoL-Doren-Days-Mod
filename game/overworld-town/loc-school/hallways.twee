@@ -116,6 +116,13 @@
 		<<toileticon>><<link [[Toilets (0:02)|School Toilets]]>><<pass 2>><</link>>
 		<br><br>
 		Classrooms
+		<<if $hour is 8>>
+			<br>
+			<<articon>> <<link [[Art Room (0:01)|Arts Classroom]]>><<pass 1>><</link>>
+		<<elseif $hour is 15>>
+			<br>
+			<<gymicon>> <<link [[Gym (0:01)|Gym]]>><<pass 1>><</link>>
+		<</if>>
 		<br>
 		<<scienceicon>><<link [[Science classroom (0:01)|Science Classroom]]>><<pass 1>><</link>>
 		<br>
